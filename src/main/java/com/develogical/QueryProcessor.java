@@ -21,6 +21,11 @@ public class QueryProcessor {
             int result = Integer.parseInt(splited[splited.length-1]) + Integer.parseInt(splited[splited.length-3]);
             return ""+result;
         }
+        else if(query.toLowerCase().contains("multiplied")){
+            String[] splited = query.split("\\s+");
+            int result = Integer.parseInt(splited[splited.length-1]) * Integer.parseInt(splited[splited.length-3]);
+            return ""+result;
+        }
         else if(query.toLowerCase().contains("largest")){
             String[] splited = query.split(": ");
             String[] splitTwo = splited[1].split(", ");
