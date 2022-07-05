@@ -22,9 +22,14 @@ public class QueryProcessor {
             return ""+result;
         }
         else if(query.toLowerCase().contains("largest")){
-            String[] splited = query.split(":");
-            String[] splitTwo = splited[1].split(",");
+            String[] splited = query.split(": ");
+            String[] splitTwo = splited[1].split(", ");
             int[] numbers = new int[splitTwo.length];
+
+            for(int k = 0; k < splitTwo.length; k++) {
+                numbers[k] = Integer.parseInt(splitTwo[k]);
+            }
+
             int result = numbers[0];
             for(int i = 1; i < numbers.length; i++){
                 if(result < numbers[i]) result = numbers[i];
