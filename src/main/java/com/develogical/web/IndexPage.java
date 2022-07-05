@@ -3,7 +3,7 @@ package com.develogical.web;
 import java.io.PrintWriter;
 
 public class IndexPage extends HtmlPage {
-
+    //second change
     @Override
     protected void writeContentTo(PrintWriter writer) {
         writer.println(
