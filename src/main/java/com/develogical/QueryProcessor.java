@@ -27,6 +27,7 @@ public class QueryProcessor {
             int[] numbers = new int[splitTwo.length];
 
             for(int k = 0; k < splitTwo.length; k++) {
+                if(splitTwo[k].contains("w")) numbers[k] = 0;
                 numbers[k] = Integer.parseInt(splitTwo[k]);
             }
 
