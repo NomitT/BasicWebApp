@@ -11,32 +11,32 @@ public class QueryProcessorTest {
     QueryProcessor queryProcessor = new QueryProcessor();
 
     @Test
-    public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
+    public void returnsEmptyStringIfCannotProcessQuery() {
         assertThat(queryProcessor.process("test"), is(""));
     }
 
     @Test
-    public void knowsAboutShakespeare() throws Exception {
+    public void knowsAboutShakespeare() {
         assertThat(queryProcessor.process("Shakespeare"), containsString("playwright"));
     }
 
     @Test
-    public void isNotCaseSensitive() throws Exception {
+    public void isNotCaseSensitive() {
         assertThat(queryProcessor.process("shakespeare"), containsString("playwright"));
     }
 
     @Test
-    public void knowsName() throws Exception {
+    public void knowsName() {
         assertThat(queryProcessor.process("what is your name"), containsString("Timon"));
     }
 
     @Test
-    public void testPlus() throws Exception{
+    public void testPlus() {
         assertThat(queryProcessor.process("what is 2 plus 40"), containsString("42"));
     }
 
     @Test
-    public void testLargest() throws Exception{
-        assertThat(queryProcessor.process("largest: 20, 328, 15, 100, 10, 0, -2, 5"), containsString("328"));
+    public void testLargest() {
+        assertThat(queryProcessor.process("which of the following numbers is the largest: 20, 328, 15, 100, 10, 0, -2, 5"), containsString("328"));
     }
 }

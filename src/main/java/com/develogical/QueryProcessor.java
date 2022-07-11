@@ -28,8 +28,8 @@ public class QueryProcessor {
         }
         else if(query.toLowerCase().contains("largest")){
             try {
-                String[] split = query.split(": ");
-                String[] splitTwo = split[1].split(", ");
+                query = query.replaceAll("[^0-9,]", "");
+                String[] splitTwo = query.split(",");
                 int[] numbers = new int[splitTwo.length];
 
                 for (int k = 0; k < splitTwo.length; k++) {
