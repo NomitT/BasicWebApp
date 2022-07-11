@@ -27,20 +27,26 @@ public class QueryProcessor {
             return ""+result;
         }
         else if(query.toLowerCase().contains("largest")){
-            String[] splited = query.split(": ");
-            String[] splitTwo = splited[1].split(", ");
-            int[] numbers = new int[splitTwo.length];
+            try {
+                String[] splited = query.split(": ");
+                String[] splitTwo = splited[1].split(", ");
+                int[] numbers = new int[splitTwo.length];
 
-            for(int k = 0; k < splitTwo.length; k++) {
-                if(splitTwo[k].contains("w")) numbers[k] = 0;
-                numbers[k] = Integer.parseInt(splitTwo[k]);
-            }
+                for (int k = 0; k < splitTwo.length; k++) {
+                    if (splitTwo[k].contains("w")) numbers[k] = 0;
+                    numbers[k] = Integer.parseInt(splitTwo[k]);
+                }
 
-            int result = numbers[0];
-            for(int i = 1; i < numbers.length; i++){
-                if(result < numbers[i]) result = numbers[i];
+                int result = numbers[0];
+                for (int i = 1; i < numbers.length; i++) {
+                    if (result < numbers[i]) result = numbers[i];
+                }
+
+                return "" + result;
             }
-            return ""+result;
+            catch(Exception e){
+                return "";
+            }
         }
         return "";
     }

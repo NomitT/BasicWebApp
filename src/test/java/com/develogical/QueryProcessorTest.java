@@ -37,6 +37,6 @@ public class QueryProcessorTest {
 
     @Test
     public void testLargest() throws Exception{
-        assertThat(queryProcessor.process("which of the following numbers is the largest: 43, 46, 328, 88"), containsString("328"));
+        assertThat(queryProcessor.process("largest: 20, 328, 15, 100, 10, 0, -2, 5"), containsString("328"));
     }
 }
